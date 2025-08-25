@@ -33,7 +33,7 @@ export function useUserState() {
   const addToCart = async (productId, quantity = 1) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/users/cart/add",
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/users/cart/add`,
         {
           productId,
           quantity,
