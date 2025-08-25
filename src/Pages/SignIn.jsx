@@ -118,21 +118,21 @@ function SignIn() {
                       Password
                     </label>
                   </div>
-                  <div className="mt-10 relative">
+                  {/* <div className="mt-10 relative">
                     <ReCAPTCHA
                       className="peer place-items-center h-10 w-full border-b-2 border-gray-300 text-gray-900 placeholder-transparent focus:outline-none focus:border-rose-600"
                       sitekey="6LfvXMoqAAAAADCCx0joMH8FQPRMEciQdeLdAkF5"
                       onChange={onChange}
                     />
-                  </div>
+                  </div> */}
                   <button
                     type="submit"
                     className={
-                      loading || !verified
+                      loading
                         ? "mt-20 px-4 py-2 rounded  bg-rose-300 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer"
                         : "mt-20 px-4 py-2 rounded bg-rose-500 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-rose-500 focus:ring-opacity-80 cursor-pointer"
                     }
-                    disabled={loading || !verified}
+                    disabled={loading}
                   >
                     {loading ? "Signing In..." : "Sign in"}
                   </button>
