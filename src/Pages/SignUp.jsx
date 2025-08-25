@@ -75,7 +75,7 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        "`${process.env.BACKEND_URL}/api/users/signup",
+        `${process.env.BACKEND_URL}/api/users/signup`,
         formData, // Automatically stringified by axios
         {
           headers: {
