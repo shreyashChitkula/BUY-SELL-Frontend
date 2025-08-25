@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserState } from "../utils/UserState";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -281,12 +281,12 @@ function SignUp() {
                   </p>
                 )}
 
-                <a
-                  href="/signIn"
+               <Link
+                  to="/signIn"
                   className="mt-4 block text-sm text-center font-medium text-rose-600 hover:underline focus:outline-none focus:ring-2 focus:ring-rose-500"
                 >
                   Already have an account? Sign in
-                </a>
+                </Link>
               </div>
             </div>
           </div>
