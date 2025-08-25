@@ -6,7 +6,7 @@
 //   const [products, setProducts] = useState([]);
 //   useEffect(() => {
 //     axios
-//       .get(`http://localhost:3000/api/products/listProducts/${id}`)
+//       .get(``${process.env.BACKEND_URL}/api/products/listProducts/${id}`)
 //       .then((res) => {
 //         console.log("products", res.data);
 //         setProducts(res.data);
@@ -65,7 +65,7 @@ export const UserDetails = ({ user }) => {
     setLoading(true);
     try {
       const response = await axios.put(
-        "http://localhost:3000/api/users/profile",
+        `${process.env.BACKEND_URL}/api/users/profile`,
         updatedUser,
         {
           headers: {
@@ -311,21 +311,21 @@ export const ProductListings = ({
 
   // useEffect(() => {
   // // Fetch listed products
-  // axios.get(`http://localhost:3000/api/products/listProducts/${userId}`)
+  // axios.get(``${process.env.BACKEND_URL}/api/products/listProducts/${userId}`)
   //   .then((res) => {
   //     setListedProducts(res.data);
   //   })
   //   .catch((err) => console.error("Error fetching listed products:", err));
 
   // // Fetch sold products
-  // axios.get(`http://localhost:3000/api/products/soldProducts/${userId}`)
+  // axios.get(``${process.env.BACKEND_URL}/api/products/soldProducts/${userId}`)
   //   .then((res) => {
   //     setSoldProducts(res.data);
   //   })
   //   .catch((err) => console.error("Error fetching sold products:", err));
 
   // // Fetch ordered products
-  // axios.get(`http://localhost:3000/api/products/orderedProducts/${userId}`)
+  // axios.get(``${process.env.BACKEND_URL}/api/products/orderedProducts/${userId}`)
   //   .then((res) => {
   //     setOrderedProducts(res.data);
   //   })
@@ -403,7 +403,7 @@ const Profile = ({ name, desc, id, handleEdit, handleDelete }) => {
     // Fetch user products
     console.log(user);
     axios
-      .get(`http://localhost:3000/api/products/listProducts/${id}`)
+      .get(`${process.env.BACKEND_URL}/api/products/listProducts/${id}`)
       .then((res) => {
         console.log("products", res.data);
         setListedProducts(res.data.listedProducts);

@@ -14,7 +14,7 @@
 //     const fetchProfile = async () => {
 //       try {
 //         const response = await axios.get(
-//           `http://localhost:3000/api/users/profile/${id}`
+//           ``${process.env.BACKEND_URL}/api/users/profile/${id}`
 //         );
 //         setUser(response.data.user);
 //         console.log("user", response.data.user);
@@ -100,7 +100,7 @@ const SellerReview = () => {
     const fetchProfile = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/users/profile/${id}`
+          `${process.env.BACKEND_URL}/api/users/profile/${id}`
         );
         setUser(response.data.user);
       } catch (err) {
@@ -117,7 +117,7 @@ const SellerReview = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/users/reviews/${id}`,
+        `${process.env.BACKEND_URL}/api/users/reviews/${id}`,
         { ...newReview, reviewerId: getUserId() }
       );
       // Assuming the response returns the updated user with new review

@@ -25,7 +25,7 @@ function Sell() {
 
     try {
       const response = axios.post(
-        "http://localhost:3000/api/products/product",
+        `${process.env.BACKEND_URL}/api/products/product`,
         { ...product, sellerId: getUserId() }
       );
       console.log((await response).data);

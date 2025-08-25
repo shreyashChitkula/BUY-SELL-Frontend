@@ -39,7 +39,7 @@ function SignUp() {
   //   e.preventDefault(); // Prevent the default form submission behavior
 
   //   try {
-  //     const response = await fetch("http://localhost:3000/api/users/signup", {
+  //     const response = await fetch("`${process.env.BACKEND_URL}/api/users/signup", {
   //       method: "POST",
   //       headers: {
   //         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/users/signup",
+        "`${process.env.BACKEND_URL}/api/users/signup",
         formData, // Automatically stringified by axios
         {
           headers: {

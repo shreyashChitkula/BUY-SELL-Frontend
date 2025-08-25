@@ -18,7 +18,7 @@ const Deliveries = () => {
     const fetchDeliveries = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/orders/deliveries/${user.id}`
+          `${process.env.BACKEND_URL}/api/orders/deliveries/${user.id}`
         );
         setDeliveries(response.data);
         console.log("deliveries", response.data);
@@ -35,7 +35,7 @@ const Deliveries = () => {
   const handleOtpSubmit = async (productId) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/orders/verify-otp",
+        "`${process.env.BACKEND_URL}/api/orders/verify-otp",
         { productId, otp }
       );
       alert(response.data.message);

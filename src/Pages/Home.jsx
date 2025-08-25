@@ -6,7 +6,7 @@ import HeroCarousel from "../Components/HeroCarousel";
 function Home() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/products/allProducts`).then((res) => {
+    axios.get(`${process.env.BACKEND_URL}/api/products/allProducts`).then((res) => {
       console.log("products", res.data);
       setProducts(res.data);
     });

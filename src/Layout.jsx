@@ -14,7 +14,7 @@ function Layout() {
     console.log("User profile fetching");
     const fetchUserProfile = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/users/profile");
+        const res = await axios.get("`${process.env.BACKEND_URL}/api/users/profile");
         console.log("signup response", res.data);
         registerUser({ ...res.data.user });
       } catch (error) {

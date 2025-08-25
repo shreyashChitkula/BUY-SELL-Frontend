@@ -23,7 +23,7 @@ const MyCart = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/orders/checkout",
+        `${process.env.BACKEND_URL}/api/orders/checkout`,
         {
           userId: user.id,
           products: user.cartItems.map((product) => product.product.id),
