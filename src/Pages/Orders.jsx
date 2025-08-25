@@ -16,7 +16,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchActiveOrders = async () => {
       try {
-        const response = await axios.get(`${process.env.BACKEND_URL}/api/orders/active-orders/${user.id}`);
+        const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/orders/active-orders/${user.id}`);
         setActiveOrders(response.data);
       } catch (err) {
         setError('Failed to fetch active orders');

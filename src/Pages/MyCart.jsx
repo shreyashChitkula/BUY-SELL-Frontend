@@ -23,7 +23,7 @@ const MyCart = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.BACKEND_URL}/api/orders/checkout`,
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/orders/checkout`,
         {
           userId: user.id,
           products: user.cartItems.map((product) => product.product.id),

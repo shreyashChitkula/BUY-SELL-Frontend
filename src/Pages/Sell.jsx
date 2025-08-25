@@ -24,11 +24,11 @@ function Sell() {
     setIsSubmitting(true);
 
     try {
-      const response = axios.post(
-        `${process.env.BACKEND_URL}/api/products/product`,
+      const response = await axios.post(
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/products/product`,
         { ...product, sellerId: getUserId() }
       );
-      console.log((await response).data);
+      console.log(response.data);
 
       if (response.ok) {
         alert("Product created successfully");

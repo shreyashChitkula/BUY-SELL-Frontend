@@ -15,7 +15,7 @@ const Product = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `${process.env.BACKEND_URL}/api/products/${id}`
+          `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/products/${id}`
         );
         setProduct(response.data);
       } catch (err) {
