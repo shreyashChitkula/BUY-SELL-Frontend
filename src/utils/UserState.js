@@ -51,7 +51,7 @@ export function useUserState() {
   const removeFromCart = async (productId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/users/cart/remove/${productId}`
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/users/cart/remove/${productId}`
       );
       console.log("updated cart", response.data);
       registerUser(response.data.user);
@@ -65,7 +65,7 @@ export function useUserState() {
   const updateCartItemQuantity = async (productId, quantity) => {
     try {
       const response = await axios.put(
-        "http://localhost:3000/api/users/cart/update-quantity",
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/users/cart/update-quantity`,
         {
           productId,
           quantity,
