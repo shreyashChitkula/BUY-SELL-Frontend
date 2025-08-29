@@ -1,5 +1,5 @@
 {
-  "build": {
-    "outDir": "dist"
-  }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
